@@ -1,0 +1,9 @@
+# Core orchestrator (pipeline.py) needs only the Python standard library.
+# The following are required ONLY by specific stages and are optional otherwise:
+
+# ram_optimize stage (Windows RAM reporting)
+psutil>=5.9
+
+# vm_mysql stage (VMware vCenter + SSH provisioning)
+pyvmomi>=8.0
+paramiko>=3.0

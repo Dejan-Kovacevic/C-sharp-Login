@@ -1,0 +1,49 @@
+{
+  "name": "laptop-and-vm-automation",
+  "log_level": "INFO",
+  "stages": [
+    {
+      "stage": "ram_optimize",
+      "enabled": true,
+      "continue_on_error": true,
+      "config": {
+        "clear_standby": true,
+        "disable_superfetch": false,
+        "optimize_visuals": true
+      }
+    },
+    {
+      "stage": "vm_mysql",
+      "enabled": false,
+      "continue_on_error": true,
+      "config": {
+        "vcenter_host": "vcenter.example.com",
+        "vcenter_user": "administrator@vsphere.local",
+        "vcenter_password": "${VCENTER_PASSWORD}",
+        "vm_name": "Your_VM_Name",
+        "ssh_user": "root",
+        "ssh_password": "${VM_SSH_PASSWORD}",
+        "ip_timeout": 120
+      }
+    },
+    {
+      "stage": "maintenance",
+      "enabled": true,
+      "continue_on_error": true,
+      "config": {
+        "tasks": ["replace_ram", "replace_fan"]
+      }
+    },
+    {
+      "stage": "perfume_report",
+      "enabled": true,
+      "continue_on_error": true,
+      "config": {
+        "name": "Creed Aventus",
+        "bottle_volume_ml": 100,
+        "sprays_per_use": 4,
+        "uses_per_week": 1
+      }
+    }
+  ]
+}
