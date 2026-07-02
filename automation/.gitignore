@@ -1,0 +1,10 @@
+# Runtime logs produced by pipeline.py --log-file
+*.log
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Local (non-example) pipeline configs may contain secrets
+config.json
+config.local.json
